@@ -24,10 +24,10 @@ class DatabaseSeeder extends Seeder
             FlightSeeder::class,
         ]);
 
-        Passenger::factory()->count(10)->create();
-        Booking::factory()->count(5)->create();
-        Fare::factory()->count(10)->create();
-        Seat::factory()->count(10)->create();
-        Ticket::factory()->count(10)->create();
+        Passenger::factory()->count(20)->create();
+        Booking::factory()->count(10)->create();
+        Fare::factory()->count(20)->create();
+        Seat::factory()->count(20)->create();
+        Ticket::factory()->count(20)->create();
     }
 }

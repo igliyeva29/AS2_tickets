@@ -10,8 +10,8 @@
                             placeholder="Ashgabat">
                     </div>
                     <div class="mb-3">
-                        <label for="airline" class="form-label">Airline:</label>
-                        <select id="airline" name="airline" class="form-select">
+                        <label for="airlines" class="form-label">Airline:</label>
+                        <select id="airlines" name="airlines" class="form-select">
                             <option value="">-</option>
                             @foreach ($airlines as $airline)
                                 <option value="{{ $airline->id }}" {{ $airline->id == $f_airlines ? 'selected' : '' }}>
