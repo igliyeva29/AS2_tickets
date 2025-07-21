@@ -21,22 +21,22 @@
                         </select>
                     </div>
                     <div class="py-3">
-                        <a href="{{ route('flights') }}" class="btn btn-secondary px-4 me-5"><i
-                                class="bi bi-x"></i>Reset</a>
-                        <button type="submit" class="btn btn-primary px-4">Submit</button>
+                        <a href="{{ route('flights') }}" class="btn btn-secondary px-4 mx-2"><i
+                                class="bi bi-x"></i> Reset</a>
+                        <button type="submit" class="btn btn-primary px-4 mx-2">Submit</button>
                     </div>
                 </form>
             </div>
-            <div class="col-9 text-center">
+            <div class="col text-center">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Airlines</th>
-                            <th>From_city</th>
-                            <th>To_city</th>
-                            <th>Departure_time</th>
-                            <th>Arrival_time</th>
-                            <th>Duration_time</th>
+                            <th>From city</th>
+                            <th>To city</th>
+                            <th>Departure time</th> 
+                            <th>Arrival time</th>
+                            <th>Duration time</th>
                         </tr>
                     </thead>
                     <tbody>

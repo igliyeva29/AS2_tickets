@@ -23,6 +23,10 @@
                     <a class="nav-link {{ Request::routeIs('fares') ? 'active' : ''}}"
                         href="{{ route('fares') }}">Fares</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::routeIs('seats') ? 'active' : ''}}"
+                        href="{{ route('seats') }}">Seats</a>
+                </li>
             </ul>
         </div>
     </div>

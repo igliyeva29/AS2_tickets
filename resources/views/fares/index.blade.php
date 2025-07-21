@@ -4,12 +4,12 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>From_city</th>
-                    <th>To_city</th>
-                    <th>Class_name</th>
+                    <th>From city</th>
+                    <th>To city</th>
+                    <th>Class name</th>
                     <th>Price</th>
                     <th>Currency</th>
-                    <th>Available_seats</th>
+                    <th>Available seats</th>
                 </tr>
             </thead>
             <tbody>
