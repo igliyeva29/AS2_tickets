@@ -43,24 +43,26 @@ class FlightSeeder extends Seeder
             'Frankfurt',
         ];
 
-        foreach ($objs as $obj) {
-            $from_city = fake()->randomElement($objs);
-            $to_city = fake()->randomElement($objs);
-            while ($from_city === $to_city) {
+        for ($i = 0; $i < 250; $i++) {
+            foreach ($objs as $obj) {
+                $from_city = fake()->randomElement($objs);
                 $to_city = fake()->randomElement($objs);
+                while ($from_city === $to_city) {
+                    $to_city = fake()->randomElement($objs);
+                }
+                $airline = Airline::inRandomOrder()->first();
+                $departureTime = fake()->dateTimeThisYear();
+                $arrivalTime = (clone $departureTime)->add(new DateInterval('PT' . rand(2, 8) . 'H'));
+                $durationTime = $arrivalTime->diff($departureTime)->format('%H:%M');
+                Flight::create([
+                    'airline_id' => $airline->id,
+                    'from_city' => $from_city,
+                    'to_city' => $to_city,
+                    'departure_time' => $departureTime,
+                    'arrival_time' => $arrivalTime,
+                    'duration_time' => $durationTime,
+                ]);
             }
-            $airline = Airline::inRandomOrder()->first();
-            $departureTime = fake()->dateTimeThisYear();
-            $arrivalTime = (clone $departureTime)->add(new DateInterval('PT' . rand(2, 8) . 'H'));
-            $durationTime = $arrivalTime->diff($departureTime)->format('%H:%M');
-            Flight::create([
-                'airline_id' => $airline->id,
-                'from_city' => $from_city,
-                'to_city' => $to_city,
-                'departure_time' => $departureTime,
-                'arrival_time' => $arrivalTime,
-                'duration_time' => $durationTime,
-            ]);
         }
     }
 }

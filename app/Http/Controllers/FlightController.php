@@ -19,7 +19,8 @@ class FlightController extends Controller
 
         $f_q = $request->has('q') ? $request->q : null;
         $f_airlines = $request->has('airlines') ? $request->airlines : null;
-        $flight = Flight::when(isset($f_q), function ($query) use ($f_q) {
+
+        $flights = Flight::when(isset($f_q), function ($query) use ($f_q) {
             return $query->where(function ($query) use ($f_q) {
                 $query->where('from_city', 'like', '%' . $f_q . '%')
                     ->orWhere('to_city', 'like', '%' . $f_q . '%');
@@ -27,13 +28,15 @@ class FlightController extends Controller
         })
             ->when(isset($f_airlines), function ($query) use ($f_airlines) {
                 return $query->where('airline_id', $f_airlines);
-            });
+            })
+            ->orderBy('id', 'desc')
+            ->paginate(60)
+            ->withQueryString();
 
         $airlines = Airline::get();
-        $flights = Flight::get();
+
         return view('flights.index')->with(
             [
-                'flight' => $flight,
                 'flights' => $flights,
                 'airlines' => $airlines,
                 'f_q' => $f_q,
