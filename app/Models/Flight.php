@@ -4,10 +4,11 @@ namespace App\Models;
 
 use App\Models\Fare;
 use App\Models\Ticket;
+use App\Models\Airline;
 use App\Models\Booking;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Flight extends Model
 {
@@ -40,5 +41,10 @@ class Flight extends Model
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
+    }
+
+   public function airline()
+    {
+        return $this->belongsTo(Airline::class);
     }
 }

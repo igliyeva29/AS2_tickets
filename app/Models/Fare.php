@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Flight;
 use App\Models\Ticket;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Fare extends Model
 {
@@ -22,11 +23,16 @@ class Fare extends Model
         'class_name',
         'price',
         'currency',
-        'available_seets',
+        'available_seats',
     ];
 
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
+    }
+
+     public function flight()
+    {
+        return $this->belongsTo(Flight::class);
     }
 }

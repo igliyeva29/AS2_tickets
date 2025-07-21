@@ -32,9 +32,14 @@ class AirlineSeeder extends Seeder
         ];
 
         foreach ($objs as $key => $value) {
+            $flightNumber = $key . fake()->unique()->numberBetween(1,9999);
+            while (Airline::where('flight_number', $flightNumber)->exists())
+            {
+                $flightNumber = $key . fake()->unique()->numberBetween(1,9999);
+            }
             Airline::create([
                 'name' => $value,
-                'flight_number' => $key . fake()->numberBetween(1,9999),
+                'flight_number' => $flightNumber,
             ]);
         }
     }

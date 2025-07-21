@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use DateInterval;
 use App\Models\Flight;
 use App\Models\Airline;
 use Illuminate\Database\Seeder;
@@ -43,16 +44,22 @@ class FlightSeeder extends Seeder
         ];
 
         foreach ($objs as $obj) {
+            $from_city = fake()->randomElement($objs);
+            $to_city = fake()->randomElement($objs);
+            while ($from_city === $to_city) {
+                $to_city = fake()->randomElement($objs);
+            }
             $airline = Airline::inRandomOrder()->first();
             $departureTime = fake()->dateTimeThisYear();
-            $arrivalTime =  fake()->dateTimeThisYear();
+            $arrivalTime = (clone $departureTime)->add(new DateInterval('PT' . rand(2, 8) . 'H'));
+            $durationTime = $arrivalTime->diff($departureTime)->format('%H:%M');
             Flight::create([
                 'airline_id' => $airline->id,
-                'from_city' => fake()->randomElement($objs),
-                'to_city' => fake()->randomElement($objs),
+                'from_city' => $from_city,
+                'to_city' => $to_city,
                 'departure_time' => $departureTime,
-                'arrival_time' => $arrivalTime ,
-                'duration_time' => fake()->time('H:m'),
+                'arrival_time' => $arrivalTime,
+                'duration_time' => $durationTime,
             ]);
         }
     }

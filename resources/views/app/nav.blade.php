@@ -19,6 +19,10 @@
                     <a class="nav-link {{ Request::routeIs('flights') ? 'active' : ''}}"
                         href="{{ route('flights') }}">Flights</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::routeIs('fares') ? 'active' : ''}}"
+                        href="{{ route('fares') }}">Fares</a>
+                </li>
             </ul>
         </div>
     </div>

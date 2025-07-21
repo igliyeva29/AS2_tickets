@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('class_name');
             $table->integer('price');
             $table->string('currency');
-            $table->string('available_seets');
+            $table->string('available_seats');
             $table->timestamps();
         });
     }

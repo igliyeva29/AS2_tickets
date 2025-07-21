@@ -24,7 +24,7 @@ class FareFactory extends Factory
             'class_name' => fake()->randomElement(['Bussiness', 'Economy', 'First']),
             'price' => fake()->numberBetween(100, 1000),
             'currency' => fake()->currencyCode(),
-            'available_seets' => fake()->numberBetween(1,300),
+            'available_seats' => fake()->numberBetween(1,300),
         ];
     }
 }
