@@ -30,7 +30,7 @@ class FlightController extends Controller
                 return $query->where('airline_id', $f_airlines);
             })
             ->orderBy('id', 'desc')
-            ->paginate(60)
+            ->paginate(10)
             ->withQueryString();
 
         $airlines = Airline::get();

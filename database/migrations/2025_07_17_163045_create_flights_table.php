@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('to_city');
             $table->dateTime('departure_time');
             $table->dateTime('arrival_time');
-            $table->time('duration_time');
+            $table->string('duration_time');
             $table->timestamps();
         });
     }

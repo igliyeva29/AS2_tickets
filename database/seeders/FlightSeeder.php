@@ -53,14 +53,14 @@ class FlightSeeder extends Seeder
                 $airline = Airline::inRandomOrder()->first();
                 $departureTime = fake()->dateTimeThisYear();
                 $arrivalTime = (clone $departureTime)->add(new DateInterval('PT' . rand(2, 8) . 'H'));
-                $durationTime = $arrivalTime->diff($departureTime)->format('%H:%M');
+                $durationTime = $arrivalTime->diff($departureTime);
                 Flight::create([
                     'airline_id' => $airline->id,
                     'from_city' => $from_city,
                     'to_city' => $to_city,
                     'departure_time' => $departureTime,
                     'arrival_time' => $arrivalTime,
-                    'duration_time' => $durationTime,
+                    'duration_time' => $durationTime->format('%H:%M'),
                 ]);
             }
         }

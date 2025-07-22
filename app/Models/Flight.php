@@ -28,6 +28,11 @@ class Flight extends Model
         'duration_time',
     ];
 
+    protected $casts = [
+        'departure_time' => 'datetime',
+        'arrival_time' => 'datetime',
+    ];
+
     public function fares(): HasMany
     {
         return $this->hasMany(Fare::class);
