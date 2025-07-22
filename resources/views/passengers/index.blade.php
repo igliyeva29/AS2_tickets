@@ -4,15 +4,21 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Airlines</th>
-                    <th>Flight number</th>
+                    <th>Id</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Passport number</th>
+                    <th>Date of birth</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($airlines as $airline)
+                @foreach ($passengers as $passenger)
                     <tr>
-                        <td>{{ $airline->name }}</td>
-                        <td>{{ $airline->flight_number }}</td>
+                        <td>{{ $passenger->id }}</td>
+                        <td>{{ $passenger->first_name }}</td>
+                        <td>{{ $passenger->last_name }}</td>
+                        <td>{{ $passenger->passport_number }}</td>
+                        <td>{{ $passenger->date_of_birth }}</td>
                     </tr>
                 @endforeach
             </tbody>
