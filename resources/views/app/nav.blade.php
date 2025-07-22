@@ -27,6 +27,14 @@
                     <a class="nav-link {{ Request::routeIs('seats') ? 'active' : ''}}"
                         href="{{ route('seats') }}">Seats</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::routeIs('passengers') ? 'active' : ''}}"
+                        href="{{ route('passengers') }}">Passengers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::routeIs('bookings') ? 'active' : ''}}"
+                        href="{{ route('bookings') }}">Bookings</a>
+                </li>
             </ul>
         </div>
     </div>

@@ -4,7 +4,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>Id</th>
+                    <th>id</th>
                     <th>First name</th>
                     <th>Last name</th>
                     <th>Passport number</th>
