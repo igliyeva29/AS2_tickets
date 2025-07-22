@@ -27,9 +27,6 @@ class TicketFactory extends Factory
 
         return [
             'booking_id' => $booking->id,
-            'passenger_id' => $passenger->id,
-            'flight_id' => $flight->id,
-            'fare_id' => $fare->id,
             'seat_number' => fake()->unique()->numberBetween(1,60) . fake()->randomElement(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K']),
             'date' => fake()->dateTimeThisYear()->format('Y.m.d h:m'),
         ];

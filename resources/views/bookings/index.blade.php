@@ -4,6 +4,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>id</th>
                     <th>Passenger id</th>
                     <th>Flight number</th>
                     <th>From city</th>
@@ -13,6 +14,7 @@
             <tbody>
                 @foreach ($bookings as $booking)
                     <tr>
+                        <td>{{ $booking->id }}</td>
                         <td>{{ $booking->passenger_id }}</td>
                         <td>{{ $booking->flight->airline->flight_number }}</td>
                         <td>{{ $booking->flight->from_city }}</td>
