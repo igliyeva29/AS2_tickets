@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->string('seat_number');
+            $table->string('seat_number')->unique();
             $table->string('seat_type');
             $table->boolean('is_available');
             $table->timestamps();

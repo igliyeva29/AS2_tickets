@@ -4,15 +4,17 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>Booking id</th>
                     <th>Seat number</th>
-                    <th>Seat type</th>
+                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($seats as $seat)
+                @foreach ($tickets as $ticket)
                     <tr>
-                        <td>{{ $seat->seat_number }}</td>
-                        <td>{{ $seat->seat_type }}</td>
+                        <td>{{ $ticket->booking_id }}</td>
+                        <td>{{ $ticket->seat_number }}</td>
+                        <td>{{ $ticket->date }}</td>
                     </tr>
                 @endforeach
             </tbody>

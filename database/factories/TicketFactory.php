@@ -2,10 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Fare;
-use App\Models\Flight;
+use App\Models\Seat;
 use App\Models\Booking;
-use App\Models\Passenger;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,13 +19,11 @@ class TicketFactory extends Factory
     public function definition(): array
     {
         $booking = Booking::inRandomOrder()->first();
-        $passenger = Passenger::inRandomOrder()->first();
-        $flight = Flight::inRandomOrder()->first();
-        $fare = Fare::inRandomOrder()->first();
+        $seat = Seat::inRandomOrder()->first();
 
         return [
             'booking_id' => $booking->id,
-            'seat_number' => fake()->unique()->numberBetween(1,60) . fake()->randomElement(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K']),
+            'seat_number' => $seat->seat_number,
             'date' => fake()->dateTimeThisYear()->format('Y.m.d h:m'),
         ];
     }
