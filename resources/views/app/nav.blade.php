@@ -2,7 +2,7 @@
     <div class="container-lg">
         <div class="d-inline-block">
             <i class="bi bi-airplane text-white h5 pe-2"></i>
-            <a class="navbar-brand" href="{{ route('home') }}">Airlines</a>
+            <a class="navbar-brand" href="{{ route('home') }}">AetherSwift</a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
