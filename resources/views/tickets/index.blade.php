@@ -6,7 +6,6 @@
                 <tr>
                     <th>Booking id</th>
                     <th>Seat number</th>
-                    <th>Date</th>
                 </tr>
             </thead>
             <tbody>
@@ -14,7 +13,6 @@
                     <tr>
                         <td>{{ $ticket->booking_id }}</td>
                         <td>{{ $ticket->seat_number }}</td>
-                        <td>{{ $ticket->date }}</td>
                     </tr>
                 @endforeach
             </tbody>

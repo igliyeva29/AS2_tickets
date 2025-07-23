@@ -24,7 +24,6 @@ class TicketFactory extends Factory
         return [
             'booking_id' => $booking->id,
             'seat_number' => $seat->seat_number,
-            'date' => fake()->dateTimeThisYear()->format('Y.m.d h:m'),
         ];
     }
 }
